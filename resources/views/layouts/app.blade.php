@@ -59,6 +59,10 @@
                     <img class="v-icon mx-1" src="{{asset('img/Icons/Vehicle Icons/van.png')}}" width="20"></img>
                     Van</button>
             </div>
+            <div class="navbar-nav ms-auto h-35 mt-2 px-3 py-2 align-middle rounded-pill" id="logo">
+                <img class="logo mt-1" src="{{asset('img/Logo transparent.png')}}" height="20"></img>
+                <span class="logoText ms-2">Lunad</span>
+            </div>
         </header>
         <!-- Sidebar -->
         <div class="l-navbar show shadow" id="nav-bar">

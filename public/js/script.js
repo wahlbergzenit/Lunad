@@ -37,8 +37,15 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
     // Your code to run since DOM is loaded and ready
     const map = L.map('map', {
         center: [-29.50, 145],
-        zoom: 3.5
+        zoom: 3.5,
+        maxZoom: 18,
+        minZoom: 3,
     });
+    
+    L.control.zoom({
+        position: 'bottomright'
+    }).addTo(map);
+    
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
     const marker1 = L.marker([-37.699450, 176.279420]).addTo(map);
     const marker2 = L.marker([-27.643310, 153.305140]).addTo(map);
