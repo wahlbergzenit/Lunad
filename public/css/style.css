@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rancho&family=Roboto&family=Sriracha&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
 
 :root {
   /*--header-height: 3rem;
@@ -11,11 +9,19 @@
   --body-font: 'Nunito', sans-serif;
   --normal-font-size: 1rem;
   --z-fixed: 100;*/
-  --color-default:#FFB200;
-  --color-second:rgba(255, 203, 66, 0.95);
-  --color-lightOrange: #FFF4CF;
+  --color-default:#FFCB42;
+  --color-second:#FFF4CF;
+  --color-secondTrans: rgba(255, 255, 255, .75);
   --color-body:#e4e9f7;
-  --color-light:#e0e0e0;
+  --color-lightGray:#F5F5F5;
+  
+  --header-height: 3rem;
+  --nav-width: 68px;
+  --first-color: #555555;
+  --first-color-light: #777777;
+  --white-color: #F7F6FB;
+  --normal-font-size: 1rem;
+  --z-fixed: 100;
 }
 
 /* Bootstrap 5 tweak: do not underline links unless hovered over */
@@ -25,13 +31,9 @@
     background-color: #FFF4CF;
 }
 
-*{
-  padding: 0%;
-  margin: 0%;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  color: #555555;
-  transition: .5s;
+a {
+    text-decoration: none!important;
+    color: var(--first-color)!important;
 }
 
 body{
@@ -41,158 +43,34 @@ body{
 .p {
     font-size:14px;
 }
-.navbar-brand{
-    font-family: 'Roboto', sans-serif;
-}
 .navbar-toggler{
     background-color: #fff9e7;
 }
 .map-select{
-    background-color: #fff9e7!important;
-    border: none!important;
-    color: #555555!important;
-    font-size: 14px!important;
+  font-family: 'Roboto', sans-serif;
+  background-color: white!important;
+  border: none!important;
+  color: var(--first-color)!important;
+  font-size: 14px!important;
 }
 .map-select:hover{
-    background-color: #FFCB42!important;
-    color: #000000!important;
+  background-color: var(--color-default)!important;
+  color: #000000!important;
 }
 .map-select:active{
-    background-color: #fff9e7!important;
-    border: #FFCB42 solid 3px!important;
-    color: #000000!important;
+  background-color: var(--color-second)!important;
+  color: #000000!important;
 }
 .map-select:focus{
-    background-color: #fff9e7;
-    border: #FFCB42 solid 3px;
-    color: #000000;
-}
-
-/*
-.main-sidebar{
-    background-color: rgb(255, 221, 134, 0.95);
-    color: #444444;
-}
-.account-auth{
-    color: #444444;
-}
-.saved-route{
-    background-color: #fff9e7;
-    border: none;
-    color: #555555;
-    font-size: 14px;
-}
-.user-panel{
-    position: absolute;
-    bottom:0;
-    background-color: #fff9e7;
-    border: none;
-    color: #555555;
-    font-size: 14px;
-}
-*/
-
-
-
-*, ::before, ::after {
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-}
-
-.header {
-  width: 100%;
-  height: var(--header-height);
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
-  background-color: orange;
-  z-index: var(--z-fixed);
-  transition: .5s;
-}
-
-.header_toggle {
-  color: var(--first-color);
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.header_img {
-  width: 35px;
-  height: 35px;
-  display: flex;
-  justify-content: center;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.header_img img {
-  width: 40px;
-}
-
-.l-navbar {
-  position: fixed;
-  top: 0;
-  left: -30%;
-  width: var(--nav-width);
-  height: 100vh;
-  background-color: var(--first-color);
-  padding: .5rem 1rem 0 0;
-  transition: .5s;
-  z-index: var(--z-fixed);
-}
-
-.nav {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-}
-
-.nav_logo, .nav_link {
-  display: grid;
-  grid-template-columns: max-content max-content;
-  align-items: center;
-  column-gap: 1rem;
-  padding: .5rem 0 .5rem 1.5rem;
-}
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
-
-:root {
-  --header-height: 3rem;
-  --nav-width: 68px;
-  --first-color: #4723D9;
-  --first-color-light: #AFA5D9;
-  --white-color: #F7F6FB;
-  --body-font: 'Nunito', sans-serif;
-  --normal-font-size: 1rem;
-  --z-fixed: 100;
+  background-color: var(--color-second)!important;
+  border: var(--first-color) 2px solid!important;
+  color: #000000!important;
 }
 
 *,
 ::before,
 ::after {
   box-sizing: border-box;
-}
-
-body {
-  position: relative;
-  margin: var(--header-height) 0 0 0;
-  padding: 0 1rem;
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  transition: .5s;
-}
-
-a {
-  text-decoration: none;
 }
 
 .header {
@@ -235,11 +113,12 @@ a {
   left: -30%;
   width: var(--nav-width);
   height: 100vh;
-  background-color: var(--color-second);
-  padding: .5rem 1rem 0 0;
+  background-color: var(--color-secondTrans);
+  backdrop-filter: blur(5px);
   transition: .5s;
   z-index: var(--z-fixed);
 }
+
 
 .nav {
   height: 100%;
@@ -249,41 +128,51 @@ a {
   overflow: hidden;
 }
 
-.nav_logo,
-.nav_link {
+.navbar_nav{
+  color: var(--first-color)
+}
+
+.saved_routes,
+.route_link {
   display: grid;
   grid-template-columns: max-content max-content;
   align-items: center;
   column-gap: 1rem;
+  padding: .5rem 0 .5rem 1.5rem;
 }
 
-.nav_logo {
-  margin-bottom: 2rem;
+.saved_routes{
+  font-family: 'Montserrat', sans-serif!important;
+  background-color: var(--color-default);
+  border-bottom: white 2px solid;
+  color: var(--first-color);
 }
 
-.nav_logo-icon {
-  font-size: 1.25rem;
-  color: var(--white-color);
-}
-
-.nav_logo-name {
-  color: var(--white-color);
-  font-weight: 700;
-}
-
-.nav_link {
+.route_link {
   position: relative;
-  color: var(--first-color-light);
+  color: var(--first-color);
   margin-bottom: 1.5rem;
   transition: .3s;
 }
 
-.nav_link:hover {
-  color: var(--white-color);
+.route_link:hover {
+  color: var(--color-default);
 }
 
 .nav_icon {
   font-size: 1.25rem;
+}
+
+.user_icon {
+  font-size: 1.25rem;
+}
+
+.user_bar{
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 1rem;
+  background-color: var(--color-second);
 }
 
 .show {
@@ -333,7 +222,6 @@ a {
 
     .l-navbar {
         left: 0;
-        padding: 1rem 1rem 0 0;
     }
 
     .show {

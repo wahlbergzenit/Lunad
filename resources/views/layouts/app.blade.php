@@ -35,66 +35,81 @@
     <div id="app">
     <!-- Navbar -->
     <header class="header navbar-expand-md body-pd" id="header">
-        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-        <div class="navbar-nav gap-2 align-middle me-4 ms-auto">
-            <button type="button" href="/ride/0" class="btn btn-primary btn-sm fw-bold mt-2  h-25 px-auto rounded-pill shadow map-select {{request()->is('tricycle') ? 'active' : ''}}">
+        <div class="navbar-nav gap-1 align-middle">
+            <div class="header_toggle me-2 mt-2">
+                <i class='bx bx-arrow-back' id="header-toggle"></i>
+            </div>
+            <button type="button" href="/ride/0" class="btn btn-primary h-25 fw-bold pe-3 mt-2 rounded-pill shadow map-select {{request()->is('tricycle') ? 'active' : ''}}">
                 <img class="v-icon mx-1" src="{{asset('img/Icons/Vehicle Icons/tricy.png')}}" width="20"></img>
                 Tricycle</button>
-            <button type="button" href="/ride/1" class="btn btn-primary btn-sm fw-bold mt-2 h-25 px-auto rounded-pill shadow map-select {{request()->is('jeepney') ? 'active' : ''}}">
+            <button type="button" href="/ride/1" class="btn btn-primary h-25 fw-bold pe-3 mt-2 rounded-pill shadow map-select {{request()->is('jeepney') ? 'active' : ''}}">
                 <img class="v-icon mx-1" src="{{asset('img/Icons/Vehicle Icons/jeepney.png')}}" width="20"></img>
                 Jeepney</button>
-            <button type="button" href="/ride/2" class="btn btn-primary btn-sm fw-bold mt-2 h-25 px-auto rounded-pill shadow map-select {{request()->is('pedicab') ? 'active' : ''}}">
+            <button type="button" href="/ride/2" class="btn btn-primary h-25 fw-bold pe-3 mt-2 rounded-pill shadow map-select {{request()->is('pedicab') ? 'active' : ''}}">
                 <img class="v-icon mx-1" src="{{asset('img/Icons/Vehicle Icons/pedicab.png')}}" width="20"></img>
                 Pedicab</button>
-            <button type="button" href="/ride/3" class="btn btn-primary btn-sm fw-bold mt-2 h-25 px-auto rounded-pill shadow map-select {{request()->is('bus') ? 'active' : ''}}">
+            <button type="button" href="/ride/3" class="btn btn-primary h-25 fw-bold pe-3 mt-2 rounded-pill shadow map-select {{request()->is('bus') ? 'active' : ''}}">
                 <img class="v-icon mx-1" src="{{asset('img/Icons/Vehicle Icons/bus.png')}}" width="20"></img>
                 Bus</button>
-            <button type="button" href="/ride/4" class="btn btn-primary btn-sm fw-bold mt-2 h-25 px-auto rounded-pill shadow map-select {{request()->is('van') ? 'active' : ''}}">
+            <button type="button" href="/ride/4" class="btn btn-primary h-25 fw-bold pe-3 mt-2 rounded-pill shadow map-select {{request()->is('van') ? 'active' : ''}}">
                 <img class="v-icon mx-1" src="{{asset('img/Icons/Vehicle Icons/van.png')}}" width="20"></img>
                 Van</button>
         </div>
     </header>
-<!--<nav class="navbar navbar-expand-md">
-        <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="navbar-nav gap-2 align-middle me-4 ms-auto">
-                    <button type="button" href="/ride/0" class="btn btn-primary btn-sm fw-bold mt-2  h-25 px-auto rounded-pill shadow map-select {{request()->is('tricycle') ? 'active' : ''}}">
-                        <img class="v-icon mx-1" src="{{asset('img/Icons/Vehicle Icons/tricy.png')}}" width="20"></img>
-                        Tricycle</button>
-                    <button type="button" href="/ride/1" class="btn btn-primary btn-sm fw-bold mt-2 h-25 px-auto rounded-pill shadow map-select {{request()->is('jeepney') ? 'active' : ''}}">
-                        <img class="v-icon mx-1" src="{{asset('img/Icons/Vehicle Icons/jeepney.png')}}" width="20"></img>
-                        Jeepney</button>
-                    <button type="button" href="/ride/2" class="btn btn-primary btn-sm fw-bold mt-2 h-25 px-auto rounded-pill shadow map-select {{request()->is('pedicab') ? 'active' : ''}}">
-                        <img class="v-icon mx-1" src="{{asset('img/Icons/Vehicle Icons/pedicab.png')}}" width="20"></img>
-                        Pedicab</button>
-                    <button type="button" href="/ride/3" class="btn btn-primary btn-sm fw-bold mt-2 h-25 px-auto rounded-pill shadow map-select {{request()->is('bus') ? 'active' : ''}}">
-                        <img class="v-icon mx-1" src="{{asset('img/Icons/Vehicle Icons/bus.png')}}" width="20"></img>
-                        Bus</button>
-                    <button type="button" href="/ride/4" class="btn btn-primary btn-sm fw-bold mt-2 h-25 px-auto rounded-pill shadow map-select {{request()->is('van') ? 'active' : ''}}">
-                        <img class="v-icon mx-1" src="{{asset('img/Icons/Vehicle Icons/van.png')}}" width="20"></img>
-                        Van</button>
-                </div>
-            </div>
-        </div>
-    </nav>
-    </div> -->
     <!-- Sidebar -->
-    <div class="l-navbar show" id="nav-bar">
+    <div class="l-navbar show shadow" id="nav-bar">
         <nav class="nav">
-            <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Lunad</span> </a>
-                <div class="nav_list">
-                    <a href="#" class="nav_link active">
-                        <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Route Map</span> </a>
-                    <a href="#" class="nav_link">
-                        <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Saved Routes</span> </a>
+            <div class="saved_routes pt-4 pb-3 shadow-sm fw-bold">
+                <i class='bx bx-bookmark nav_icon'></i>
+                <span class="nav_name ms-2">Saved Routes</span>
+            </div>
+
+            <!-- Saved routes list -->
+            <div class="nav_list ms-5 mb-auto">
+                <a href="#" class="route_link">
+                <i class='bx bx-pin nav_icon'></i> <span class="nav_name">route 1</span> </a>
+            </div>
+            
+            <div class="shadow-sm fw-bold pt-2 user_bar">
+                <i class='col-md-3 me-auto bx bx-user user_icon'></i>
+                <div class="col-md-6 nav-link mt-3">
+                    <ul class="navbar-nav me-auto">
+                    <!-- Authentication Links -->
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="account-auth" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="account-auth" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <i class='bx bx-user nav_icon'></i>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="account-auth dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
                 </div>
             </div>
-            <a href="#" class="nav_link">
-                <i class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a>
         </nav>
     </div>
     <!--Container Main start-->
