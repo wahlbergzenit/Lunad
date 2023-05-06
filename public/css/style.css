@@ -1,14 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
 
 :root {
-  /*--header-height: 3rem;
-  --nav-width: 68px;
-  --first-color: #4723D9;
-  --first-color-light: #AFA5D9;
-  --white-color: #F7F6FB;
-  --body-font: 'Nunito', sans-serif;
-  --normal-font-size: 1rem;
-  --z-fixed: 100;*/
   --color-default:#FFCB42;
   --color-second:#FFF4CF;
   --color-secondTrans: rgba(255, 255, 255, .75);
@@ -24,7 +16,20 @@
   --z-fixed: 100;
 }
 
-/* Bootstrap 5 tweak: do not underline links unless hovered over */
+#body-pd{
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+  width: 100vw;
+  height: 100vh;
+}
+
+.lunad_UI {
+  position: fixed;
+  z-index: 9999;
+}
 
 .logo{
     text-decoration: none;
@@ -34,10 +39,6 @@
 a {
     text-decoration: none!important;
     color: var(--first-color)!important;
-}
-
-body{
-    background: url("../img/mapsample.png") repeat;
 }
 
 .p {
