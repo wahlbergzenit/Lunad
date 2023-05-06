@@ -35,7 +35,7 @@
     <div id="app">
     <!-- Navbar -->
     <header class="header navbar-expand-md body-pd" id="header">
-        <div class="navbar-nav gap-1 align-middle">
+        <div class="navbar-nav gap-2 align-middle">
             <div class="header_toggle me-2 mt-2">
                 <i class='bx bx-arrow-back' id="header-toggle"></i>
             </div>
@@ -59,9 +59,9 @@
     <!-- Sidebar -->
     <div class="l-navbar show shadow" id="nav-bar">
         <nav class="nav">
-            <div class="saved_routes pt-4 pb-3 shadow-sm fw-bold">
+            <div class="saved_routes pt-4 pb-3 shadow-sm">
                 <i class='bx bx-bookmark nav_icon'></i>
-                <span class="nav_name ms-2">Saved Routes</span>
+                <span class="nav_name ms-2 fw-bold">Saved Routes</span>
             </div>
 
             <!-- Saved routes list -->
@@ -70,34 +70,33 @@
                 <i class='bx bx-pin nav_icon'></i> <span class="nav_name">route 1</span> </a>
             </div>
             
-            <div class="shadow-sm fw-bold pt-2 user_bar">
-                <i class='col-md-3 me-auto bx bx-user user_icon'></i>
-                <div class="col-md-6 nav-link mt-3">
-                    <ul class="navbar-nav me-auto">
-                    <!-- Authentication Links -->
+            <div class="navbar navbar-expand-md shadow ps-4 py-2 user_bar">
+                <i class='bx bx-user user_icon'></i>
+                <div class="gap-1 user_text">
+                <ul class="navbar-nav">
+                        <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="account-auth" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-
+                            <div class="vr my-auto" style="width: 2px; height: 20px;"></div>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="account-auth" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
-                            <i class='bx bx-user nav_icon'></i>
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="account-auth dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
