@@ -36,8 +36,8 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
 
     // Your code to run since DOM is loaded and ready
     const map = L.map('map', {
-        center: [-29.50, 145],
-        zoom: 3.5,
+        center: [13.629841, 123.184358],
+        zoom: 17,
         maxZoom: 18,
         minZoom: 3,
     });
@@ -45,17 +45,23 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
     L.control.zoom({
         position: 'bottomright'
     }).addTo(map);
+
+    const locationIcon = L.icon({
+        iconUrl: 'img/locpin.png',
+        iconSize: [40, 40],
+    });
     
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
-    const marker1 = L.marker([-37.699450, 176.279420]).addTo(map);
-    const marker2 = L.marker([-27.643310, 153.305140]).addTo(map);
-    const marker3 = L.marker([-33.956330, 122.150270]).addTo(map);
-    const marker4 = L.marker([-34.962390, 117.391220]).addTo(map);
-    const marker5 = L.marker([-17.961210, 122.214820]).addTo(map);
-    const marker6 = L.marker([-16.505960, 151.751520]).addTo(map);
-    const marker7 = L.marker([-22.594400, 167.484440]).addTo(map);
-    const marker8 = L.marker([-37.977000, 177.057000]).addTo(map);
-    const marker9 = L.marker([-41.037600, 173.017000]).addTo(map);
-    const marker10 = L.marker([-37.670300, 176.212000]).addTo(map);
+    const marker1 = L.marker([13.630363, 123.185575], {icon: locationIcon})
+        .bindPopup('<b>Tricycle Terminal</b><br/> <p><b>Fare: </b>13 Pesos<br/> <b>Time: </b>7:00 - 19:00</p>')
+        .addTo(map);
+    const marker2 = L.marker([13.628146, 123.184450], {icon: locationIcon}).addTo(map);
+    const marker3 = L.marker([13.629579, 123.183326], {icon: locationIcon}).addTo(map);
+    const marker4 = L.marker([13.625989, 123.184749], {icon: locationIcon}).addTo(map);
+    const marker5 = L.marker([13.624851, 123.184302], {icon: locationIcon}).addTo(map);
+    const marker6 = L.marker([13.634069, 123.189960], {icon: locationIcon}).addTo(map);
+    const marker7 = L.marker([13.634209, 123.185717], {icon: locationIcon}).addTo(map);
+    const marker8 = L.marker([13.623031, 123.184687], {icon: locationIcon}).addTo(map);
+    const marker9 = L.marker([13.623910, 123.183889], {icon: locationIcon}).addTo(map);
 });
 
