@@ -16,7 +16,6 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('/fontawesome-free/css/all.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" >
     <link rel="stylesheet" href="./Bootstrap/css/bootstrap.min.css">
@@ -25,6 +24,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
         integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
         crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="leaflet-routing-machine.css" />
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -32,10 +33,12 @@
     <script src="./Bootstrap/js/bootstrap.bundle.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="leaflet-routing-machine.js"></script>
+
 </head>
 <body id="body-pd" oncontextmenu="return false" class="snippet-body body-pd">
-    <div id="map"></div>
+    <div id="map" class="map"></div>
     <!-- Navbar -->
     <div class="lunad_UI">
         <header class="header navbar-expand-md body-pd" id="header">
@@ -119,6 +122,9 @@
                 </div>
             </nav>
         </div>
+        <main class="py-4">
+            @yield('content')
+        </main>
     </div>
     
     <!--Container Main start-->
